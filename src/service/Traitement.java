@@ -1,14 +1,14 @@
 package service;
 
+import business.Coureur;
+import business.Course;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
-
-import business.Coureur;
-import business.Course;
 
 public class Traitement {
     static List<Coureur> coureurs = new ArrayList<>();
@@ -39,24 +39,23 @@ public class Traitement {
 						System.out.print("Mot de passe : ");
 						String mdp = sc.nextLine();
 						if (login.equalsIgnoreCase(a.getLogin()) && mdp.equalsIgnoreCase(a.getMdp())) {
-							System.out.println("Connexion réussie");
+							System.out.println("Connexion rï¿½ussie");
 							menuPrincipal(a);
-							b = 1;
+							break;
 						} else {
 							throw new Exception();
 						}
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
-				} while (b != 1);
-				break;
+				} while (true);
 			case "Exit":
-				System.out.println("Aurevoir et à bientôt sur le programme Tapis de course");
+				System.out.println("Aurevoir et ï¿½ bientï¿½t sur le programme Tapis de course");
 				break;
 			default:
-				System.out.println("Réponse non valide");
+				System.out.println("Rï¿½ponse non valide");
 			}
-		} while (!verifCompte.equals("Exit"));
+		} while (true);
 	}
 
 	public static Coureur creerCompte() {
@@ -66,7 +65,7 @@ public class Traitement {
 		String s2 = sc.nextLine();
 		System.out.print("Entrez votre nom : ");
 		String s3 = sc.nextLine();
-		System.out.print("Entrez votre prénom : ");
+		System.out.print("Entrez votre prï¿½nom : ");
 		String s4 = sc.nextLine();
 		System.out.print("Sexe : ");
 		String s5 = sc.nextLine();
@@ -87,24 +86,24 @@ public class Traitement {
 				System.out.println("3 - Ajouter une course");
 				System.out.println("4 - Lister les 3 meilleurs coureurs");
 				System.out.println("5 - Obtenir la vitesse moyenne de chaque coureur");
-				System.out.println("6 - Lister le nombre de courses réparties par mois");
+				System.out.println("6 - Lister le nombre de courses rï¿½parties par mois");
 			
                     System.out.println("Choisissez une option : ");
                     s = sc.nextLine();
                     if (s.equalsIgnoreCase("1")) {
                         voirListeCourse(a);
-                    } else if (s.equalsIgnoreCase("2")) {
+                    }else if (s.equalsIgnoreCase("2")) {
                         creerCoureur();
                     }else if(s.equalsIgnoreCase("3")){
                         creeCourse();
-                    } else if (s.equalsIgnoreCase("4")) {
+                    }else if (s.equalsIgnoreCase("4")) {
                         meilleurCoureur(coureurs);
-                    } else if (s.equalsIgnoreCase("5")) {
+                    }else if (s.equalsIgnoreCase("5")) {
                         vitesseMoyenne(a);
-                    } else {
+                    }else {
                         System.out.println("Saisie non comprise");
                     }
-		} while (!(s.equalsIgnoreCase("1") || s.equalsIgnoreCase("2") || s.equalsIgnoreCase("3")));
+		} while (true);
 	}
 
 	public static void voirListeCourse(Coureur a) {
@@ -130,7 +129,7 @@ public class Traitement {
 		String login = recupererValeurEntree("Entrer votre login :");
 		String mdp = recupererValeurEntree("Entrer votre mot de passe :");
 		String nom = recupererValeurEntree("Entrer votre nom : ");
-		String prenom = recupererValeurEntree("Entrer votre prénom :");
+		String prenom = recupererValeurEntree("Entrer votre prï¿½nom :");
 		String sexe = recupererValeurEntree("Quel est votre sexe ? Homme, Femme");
 		int distance = Integer.valueOf(recupererValeurEntree("Quelle distance avait vous parcourue sur la course ? "));
 		int temps = Integer.valueOf(recupererValeurEntree("Quel temps avait vous sur la course ?"));

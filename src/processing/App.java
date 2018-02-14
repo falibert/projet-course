@@ -1,20 +1,19 @@
 package processing;
 
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 import business.Coureur;
 import business.Course;
 import service.Traitement;
+
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class App {
 
 	public static void main(String[] args) throws ParseException {
 
 		List<Course> courses = new ArrayList<>();	
-		Course course1 = new Course("Sainté-Lyon", Traitement.convertStringToDate("03/12/2014"), 72000);
+		Course course1 = new Course("Saintï¿½-Lyon", Traitement.convertStringToDate("03/12/2014"), 72000);
 		Course course2 = new Course("Lyon Urban Trail", Traitement.convertStringToDate("16/02/2015"), 20000);
 		Course course3 = new Course("Frappadingue", Traitement.convertStringToDate("18/06/2016"), 15000);
 		courses.add(course1);
